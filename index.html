@@ -33,9 +33,7 @@
 <body>
     <script>
         window["markdown"].ready.then(markdown => {
-            window.addEventListener('DOMContentLoaded', (event) => {
-                document.body.insertAdjacentHTML('beforeend', markdown.parse(decodeURIComponent(window.location.hash.substring(1))));
-            });
+            document.body.insertAdjacentHTML('beforeend', markdown.parse(decodeURIComponent(window.location.hash.substring(1))));
         })
     </script>        
 </body>
