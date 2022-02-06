@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="markdown.js"></script>
+  <link href="https://unpkg.com/sanitize.css" rel="stylesheet">
+  <link href="https://unpkg.com/sanitize.css/typography.css" rel="stylesheet">
+  <style>
+    html {
+        background-color: #eee;
+        padding: 0 calc(50% - 25rem);
+    }
+
+    body {
+        background-color: #fff;
+        min-height: 100vh;
+    }
+
+    @media (max-width: 639px) {
+        body {
+            padding: 10%;
+        }
+    }
+
+    @media (min-width: 640px) {
+        body {
+            padding: 4rem;
+        }
+    }
+  </style>
+</head>
+<body>
+    <script>
+        window["markdown"].ready.then(markdown => {
+          document.write(markdown.parse(decodeURIComponent(window.location.hash.substring(1))));
+        })
+    </script>        
+</body>
+
+
+</html>
